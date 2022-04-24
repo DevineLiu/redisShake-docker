@@ -6,7 +6,7 @@ RUN chmod +x  build.sh
 RUN  make build
 
 
-FROM alpine:3.15.3
+FROM alpine:latest
 
 COPY --from=builder /workspace/RedisShake/bin/redis-shake.linux /redis-shake
 COPY --from=builder /workspace/RedisShake/conf/redis-shake.conf /redis-shake.conf
